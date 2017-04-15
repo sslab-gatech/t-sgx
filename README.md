@@ -36,7 +36,7 @@ Usage
 $ cd test/tsgx-test
 $ make
 $ ./App
-~~~~~{.sh}
+~~~~~
 
 Note
 ------------------------
@@ -49,3 +49,4 @@ Authors
 - Ming-Wei Shih <mingwei.shih@gatech.edu>
 - Sangho Lee <sangho@gatech.edu>
 - Taesoo Kim <taesoo@gatech.edu>
+- Marcus Peinado
