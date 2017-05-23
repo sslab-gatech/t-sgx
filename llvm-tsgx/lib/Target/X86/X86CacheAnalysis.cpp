@@ -114,6 +114,9 @@ void X86CacheAnalysis::doInitialize(MachineFunction &MF, AsmPrinter &AP) {
   this->AP = &AP;
   this->LI = AP.LI;
 
+  if (!cache_model.empty())
+    cache_model.clear();
+
   if (!rax_analysis_result.empty())
     rax_analysis_result.clear();
 }
@@ -435,7 +438,6 @@ void X86CacheAnalysis::cache_write(int bb_num, int id, int offset) {
   }
 
   if (cache_model[bb_num].find(id) == cache_model[bb_num].end()) {
-    cache_model[bb_num][id].reserve(512);
     for (int i = 0; i < 512; i++) {
       cache_model[bb_num][id].push_back(false);
     }
